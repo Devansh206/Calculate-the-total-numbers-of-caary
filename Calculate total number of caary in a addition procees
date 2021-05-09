@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+    int a,b,c;
+    scanf("%d",&a);
+    scanf("%d",&b);
+    c= carry(a,b);
+    printf("%d",c);
+    return 0;
+    
+}
+int carry(int n1,int n2)
+{
+    int carry=0,sum=0,p,q,count;
+    while(n1>=0&&n2>=0)
+    {p=n1%10;
+      q=n2%10;
+      sum=carry+p+q;
+      if(sum>9)
+      {   carry=1;
+          count++;
+      }
+      else 
+      {
+          carry=0;
+      }
+      n1=n1/10;
+      n2=n2/10;
+    }
+      return count;
+}
